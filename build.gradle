@@ -8,6 +8,8 @@ apply from: "$rootDir/gradle/versioning.gradle"
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
+group = 'ch.so.agi.ilivalidator'
+
 repositories {
     jcenter()
     mavenCentral()
