@@ -7,7 +7,7 @@ CONTRACTED MODEL SO_FunctionsExt
     !!@ ist der Rückgabewert der Funktion true.";
     !!@ fn.param = "url Die URL der zu prüfenden HTTP-Ressource.";
     !!@ fn.param = "prefix Beliebiger URL-Prefix.";
-    !!@ fn.return = "True falls die Ressource existiert. False die Ressource
+    !!@ fn.return = "True, falls die Ressource existiert. False, fallse die Resource
     !!@ nicht existiert.";
     !!@ fn.since = "2019-01-27";
     FUNCTION isHttpResource (url: TEXT; prefix: TEXT): BOOLEAN;
