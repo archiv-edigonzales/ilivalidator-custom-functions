@@ -7,9 +7,20 @@ CONTRACTED MODEL SO_FunctionsExt
     !!@ ist der Rückgabewert der Funktion true.";
     !!@ fn.param = "url Die URL der zu prüfenden HTTP-Ressource.";
     !!@ fn.param = "prefix Beliebiger URL-Prefix.";
-    !!@ fn.return = "True, falls die Ressource existiert. False, fallse die Resource
+    !!@ fn.return = "True, falls die Ressource existiert. False, falls die Resource
     !!@ nicht existiert.";
     !!@ fn.since = "2019-01-27";
     FUNCTION isHttpResource (url: TEXT; prefix: TEXT): BOOLEAN;
+    
+    !!@ fn.description = "Prüft bei einer Klasse, ob die Assoziationen auf sich
+    !!@ selber korrekt sind und keine Verweise auf das gleiche Objekt,
+    !!@ keine identischen Verweise und keine Endlosschleifen vorhanden sind.
+    !!@ Hardcodiert für das OEREB-Rahmenmodell und kompatible Modelle.";
+    !!@ fn.param = "Objects Alle Objekte der Klasse.";
+    !!@ fn.return = "True, falls keine Fehler gefunden werden. False, falls Fehler 
+    !!@ gefunden werden.";
+    !!@ fn.since = "2019-01-27";
+    FUNCTION isValidDocumentsCycle (Objects: OBJECTS OF ANYCLASS): BOOLEAN;
+    
     
 END SO_FunctionsExt.
