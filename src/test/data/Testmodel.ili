@@ -4,7 +4,11 @@ CONTRACTED MODEL Testmodel
   IMPORTS SO_FunctionsExt;
       
     TOPIC Topic =
-            
+        DOMAIN
+            Lkoord = COORD 480000.000 .. 850000.000 [INTERLIS.m],
+                            70000.000 .. 310000.000 [INTERLIS.m],
+                     ROTATION 2 -> 1;
+
         CLASS ClassA =
             attr2 : TEXT;
             attr3 : TEXT;
@@ -21,6 +25,13 @@ CONTRACTED MODEL Testmodel
             attr1 : TEXT;
             dateattr2 : TEXT*10;
         END ClassB;
+        
+        CLASS ClassC = 
+            flaeche: SURFACE WITH (STRAIGHTS) VERTEX Lkoord WITHOUT OVERLAPS > 0.001;
+            !!@ name = calculateArea
+            !!@ ilivalid.msg = "Flaeche Flaeche Flaeche falsch..."                        
+            MANDATORY CONSTRAINT SO_FunctionsExt.area(flaeche);            
+        END ClassC;
                       
     END Topic;
     

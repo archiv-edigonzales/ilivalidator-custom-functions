@@ -2,6 +2,10 @@ INTERLIS 2.3;
 CONTRACTED MODEL SO_FunctionsExt
   AT "mailto:stefan.ziegler@bd.so.ch" VERSION "2019-01-27" =
     
+    /**
+    * Allgemeine Funktionen
+    */
+    
     !!@ fn.description = "Prüft mittels Status-Code, ob eine HTTP-Ressource vorhanden ist.
     !!@ Falls der Status-Code grösser gleich 200 und kleiner gleich 399 sein,
     !!@ ist der Rückgabewert der Funktion true.";
@@ -11,6 +15,16 @@ CONTRACTED MODEL SO_FunctionsExt
     !!@ nicht existiert.";
     !!@ fn.since = "2019-01-27";
     FUNCTION isHttpResource (url: TEXT; prefix: TEXT): BOOLEAN;
+    
+    /**
+    * Geometrie-Funktionen
+    */
+    FUNCTION area (geometryAttributeName: OBJECTS OF ANYCLASS): NUMERIC;
+
+    
+    /**
+    * OEREB-Kataster (und kompatible Modelle)
+    */
     
     !!@ fn.description = "Prüft bei einer Klasse, ob die Assoziationen auf sich
     !!@ selber korrekt sind und keine Verweise auf das gleiche Objekt,
