@@ -13,7 +13,7 @@ import ch.interlis.iox_j.validator.InterlisFunction;
 import ch.interlis.iox_j.validator.ObjectPool;
 import ch.interlis.iox_j.validator.Value;
 
-public class IsHttpRessourceIoxPlugin implements InterlisFunction {
+public class IsHttpResourceIoxPlugin implements InterlisFunction {
     private LogEventFactory logger = null;
 
     @Override

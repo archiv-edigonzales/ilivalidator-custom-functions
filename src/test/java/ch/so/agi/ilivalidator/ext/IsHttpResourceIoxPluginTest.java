@@ -25,7 +25,7 @@ import ch.interlis.iox_j.logging.LogEventFactory;
 import ch.interlis.iox_j.validator.ValidationConfig;
 import ch.interlis.iox_j.validator.Validator;
 
-public class IsHttpRessourceIoxPluginTest {
+public class IsHttpResourceIoxPluginTest {
     private TransferDescription td=null;
     // OID
     private final static String OBJ_OID1 ="o1";
@@ -63,7 +63,7 @@ public class IsHttpRessourceIoxPluginTest {
         LogEventFactory errFactory = new LogEventFactory();
         Settings settings = new Settings();
         Map<String,Class> newFunctions = new HashMap<String,Class>();
-        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpRessourceIoxPlugin.class);
+        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpResourceIoxPlugin.class);
         settings.setTransientObject(Validator.CONFIG_CUSTOM_FUNCTIONS, newFunctions);
         Validator validator=new Validator(td, modelConfig, logger, errFactory, new PipelinePool(), settings);
         validator.validate(new StartTransferEvent());
@@ -76,7 +76,7 @@ public class IsHttpRessourceIoxPluginTest {
     }
     
     @Test
-    public void isHttpRessource_WithPrefix_Ok() {
+    public void isHttpResource_WithPrefix_Ok() {
         Iom_jObject iomObjA = new Iom_jObject(ILI_CLASSA, OBJ_OID1);
         iomObjA.setattrvalue("attr2", "https://geo.so.ch/docs/ch.so.arp.zonenplaene/Zonenplaene_pdf/");
         iomObjA.setattrvalue("attr3", "65-Aedermannsdorf/Entscheide/65-5-E.pdf");
@@ -87,7 +87,7 @@ public class IsHttpRessourceIoxPluginTest {
         LogEventFactory errFactory = new LogEventFactory();
         Settings settings = new Settings();
         Map<String,Class> newFunctions = new HashMap<String,Class>();
-        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpRessourceIoxPlugin.class);
+        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpResourceIoxPlugin.class);
         settings.setTransientObject(Validator.CONFIG_CUSTOM_FUNCTIONS, newFunctions);
         Validator validator=new Validator(td, modelConfig, logger, errFactory, new PipelinePool(), settings);
         validator.validate(new StartTransferEvent());
@@ -102,7 +102,7 @@ public class IsHttpRessourceIoxPluginTest {
     }
     
     @Test
-    public void isHttpRessource_Fail() {
+    public void isHttpResource_Fail() {
         Iom_jObject iomObjA = new Iom_jObject(ILI_CLASSA, OBJ_OID1);
         iomObjA.setattrvalue("attr2", "");
         iomObjA.setattrvalue("attr3", "https://geo.so.ch/docs/ch.so.arp.zonenplaene/Zonenplaene_pdf/65-Aedermannsdorf/Entscheide/65-5-FOO.pdf");
@@ -113,7 +113,7 @@ public class IsHttpRessourceIoxPluginTest {
         LogEventFactory errFactory = new LogEventFactory();
         Settings settings = new Settings();
         Map<String,Class> newFunctions = new HashMap<String,Class>();
-        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpRessourceIoxPlugin.class);
+        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpResourceIoxPlugin.class);
         settings.setTransientObject(Validator.CONFIG_CUSTOM_FUNCTIONS, newFunctions);
         Validator validator=new Validator(td, modelConfig, logger, errFactory, new PipelinePool(), settings);
         validator.validate(new StartTransferEvent());
@@ -126,7 +126,7 @@ public class IsHttpRessourceIoxPluginTest {
     }
     
     @Test
-    public void isHttpRessource_WithPrefix_Fail() {
+    public void isHttpResource_WithPrefix_Fail() {
         Iom_jObject iomObjA = new Iom_jObject(ILI_CLASSA, OBJ_OID1);
         iomObjA.setattrvalue("attr2", "http://");
         iomObjA.setattrvalue("attr3", "65-Aedermannsdorf/Entscheide/65-5-E.pdf");
@@ -137,7 +137,7 @@ public class IsHttpRessourceIoxPluginTest {
         LogEventFactory errFactory = new LogEventFactory();
         Settings settings = new Settings();
         Map<String,Class> newFunctions = new HashMap<String,Class>();
-        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpRessourceIoxPlugin.class);
+        newFunctions.put("SO_FunctionsExt.isHttpResource", IsHttpResourceIoxPlugin.class);
         settings.setTransientObject(Validator.CONFIG_CUSTOM_FUNCTIONS, newFunctions);
         Validator validator=new Validator(td, modelConfig, logger, errFactory, new PipelinePool(), settings);
         validator.validate(new StartTransferEvent());
