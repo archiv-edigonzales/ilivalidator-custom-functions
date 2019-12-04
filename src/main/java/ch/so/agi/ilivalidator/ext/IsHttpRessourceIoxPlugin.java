@@ -53,7 +53,7 @@ public class IsHttpRessourceIoxPlugin implements InterlisFunction {
 
     @Override
     public String getQualifiedIliName() {
-        return "SO_FunctionsExt.isHttpRessource";
+        return "SO_FunctionsExt.isHttpResource";
     }
 
     @Override
