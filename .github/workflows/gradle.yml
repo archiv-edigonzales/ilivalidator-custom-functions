@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Generate build number
       uses: einaregilsson/build-number@v2 
@@ -20,8 +18,10 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
+      run: ./gradlew build
+    - name: Publish Jar
+      if: success() && github.ref == 'refs/heads/master'
       env:
         PASSWORD: ${{secrets.GITHUB_TOKEN}}
-      run: ./gradlew build publish
-
+      run: ./gradlew publish
 
